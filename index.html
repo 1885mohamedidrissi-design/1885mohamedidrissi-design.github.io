@@ -10,10 +10,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
@@ -23,214 +23,227 @@
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
+            max-width: 480px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         .logo {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
             font-size: 50px;
+            margin: 0 auto;
+        }
+
+        .testnet-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff9800;
             color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
         }
 
         h1 {
             color: #333;
-            margin-bottom: 10px;
             font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .subtitle {
             color: #666;
-            margin-bottom: 30px;
             font-size: 16px;
+            margin-bottom: 30px;
         }
 
         .features {
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 20px;
-            margin-bottom: 30px;
+            margin-top: 30px;
         }
 
-        .feature {
+        .feature-card {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
+            border-radius: 16px;
+            padding: 25px;
             border-right: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateX(-5px);
         }
 
         .feature-icon {
-            font-size: 30px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
-        .feature h3 {
+        .feature-title {
             color: #333;
+            font-size: 20px;
+            font-weight: bold;
             margin-bottom: 8px;
         }
 
-        .feature p {
+        .feature-desc {
             color: #666;
             font-size: 14px;
         }
 
         .pi-button {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             border: none;
             padding: 15px 40px;
-            border-radius: 50px;
+            border-radius: 30px;
             font-size: 18px;
+            font-weight: bold;
             cursor: pointer;
-            transition: transform 0.3s;
-            width: 100%;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .pi-button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
         .status {
             margin-top: 20px;
-            padding: 15px;
-            border-radius: 10px;
-            display: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
         }
 
         .status.success {
             background: #d4edda;
             color: #155724;
-            display: block;
         }
 
         .status.error {
             background: #f8d7da;
             color: #721c24;
-            display: block;
         }
 
-        .footer {
+        footer {
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
             color: #999;
             font-size: 12px;
-        }
-
-        .testnet-badge {
-            display: inline-block;
-            background: #ff9800;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">🛒</div>
-        
-        <span class="testnet-badge">🧪 Testnet</span>
-        
+        <div class="logo-container">
+            <div class="logo">🛒</div>
+            <span class="testnet-badge">Testnet</span>
+        </div>
+
         <h1>PiNova</h1>
         <p class="subtitle">بوابة التجارة الإلكترونية على Pi Network</p>
 
         <div class="features">
-            <div class="feature">
+            <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>آمن وموثوق</h3>
-                <p>معاملات آمنة 100% على شبكة Pi</p>
+                <div class="feature-title">آمن وموثوق</div>
+                <div class="feature-desc">معاملات آمنة 100% على شبكة Pi</div>
             </div>
-            
-            <div class="feature">
+
+            <div class="feature-card">
                 <div class="feature-icon">⚡</div>
-                <h3>سريع وسهل</h3>
-                <p>تسوق ودفع في ثوانٍ معدودة</p>
+                <div class="feature-title">سريع وسهل</div>
+                <div class="feature-desc">تسوق ودفع في ثوانٍ معدودة</div>
             </div>
-            
-            <div class="feature">
+
+            <div class="feature-card">
                 <div class="feature-icon">🌍</div>
-                <h3>عالمي</h3>
-                <p>متاح للجميع في جميع أنحاء العالم</p>
+                <div class="feature-title">عالمي</div>
+                <div class="feature-desc">متاح للجميع في جميع أنحاء العالم</div>
             </div>
         </div>
 
-        <button class="pi-button" onclick="connectWallet()">
-            🔗 ربط محفظة Pi
+        <button class="pi-button" id="connectBtn">
+            🔗 الاتصال بـ Pi Wallet
         </button>
 
-        <div id="status" class="status"></div>
+        <div id="status" class="status" style="display: none;"></div>
 
-        <div class="footer">
-            <p>© 2024 PiNova - جميع الحقوق محفوظة</p>
-            <p>مدعوم بواسطة Pi Network</p>
-        </div>
+        <footer>
+            <p>© 2026 PiNova - جميع الحقوق محفوظة</p>
+        </footer>
     </div>
 
     <script>
-        // Initialize Pi SDK
+        // تهيئة Pi SDK
         const Pi = window.Pi;
         
-        function connectWallet() {
-            const statusDiv = document.getElementById('status');
-            
+        if (Pi) {
+            Pi.init({ version: "2.0", sandbox: true });
+        }
+
+        const connectBtn = document.getElementById('connectBtn');
+        const statusDiv = document.getElementById('status');
+
+        function showStatus(message, isSuccess) {
+            statusDiv.textContent = message;
+            statusDiv.className = 'status ' + (isSuccess ? 'success' : 'error');
+            statusDiv.style.display = 'block';
+        }
+
+        connectBtn.addEventListener('click', async () => {
             try {
-                Pi.authenticate(['username', 'payments'], onIncompletePaymentFound)
-                    .then(function(auth) {
-                        console.log(auth);
-                        statusDiv.className = 'status success';
-                        statusDiv.innerHTML = `
-                            ✅ تم الاتصال بنجاح!<br>
-                            اسم المستخدم: ${auth.user.username}<br>
-                            المعرف: ${auth.user.id}
-                        `;
-                    })
-                    .catch(function(error) {
-                        console.error(error);
-                        statusDiv.className = 'status error';
-                        statusDiv.innerHTML = '❌ حدث خطأ في الاتصال';
-                    });
+                if (!Pi) {
+                    showStatus('️ Pi SDK غير متوفر. افتح التطبيق في Pi Browser', false);
+                    return;
+                }
+
+                showStatus(' جاري الاتصال...', true);
+
+                const scopes = ['username', 'payments'];
+                
+                const onIncompletePaymentFound = (payment) => {
+                    console.log('دفع غير مكتمل:', payment);
+                };
+
+                await Pi.authenticate(scopes, onIncompletePaymentFound);
+                
+                showStatus('✅ تم الاتصال بنجاح! مرحباً بك في PiNova', true);
+                connectBtn.textContent = '✅ متصل';
+                
             } catch (error) {
-                statusDiv.className = 'status error';
-                statusDiv.innerHTML = '❌ تأكد من أنك تستخدم Pi Browser';
+                console.error('خطأ في الاتصال:', error);
+                showStatus('❌ فشل الاتصال: ' + error.message, false);
             }
-        }
+        });
 
-        function onIncompletePaymentFound(payment) {
-            console.log("Incomplete payment found", payment);
-        }
-
-        // Check if running in Pi Browser
-        window.onload = function() {
-            if (!navigator.userAgent.includes('PiBrowser')) {
-                console.log('Not running in Pi Browser');
+        // التحقق من حالة SDK عند التحميل
+        window.addEventListener('load', () => {
+            if (Pi) {
+                console.log('✅ Pi SDK تم تحميله بنجاح');
+            } else {
+                console.log('⚠️ Pi SDK غير متوفر');
             }
-        };
+        });
     </script>
 </body>
 </html>
